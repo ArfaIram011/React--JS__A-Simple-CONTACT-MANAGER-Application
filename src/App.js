@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from './components/Header';
 import AddContact from "./components/AddContact";
 import ContactList from "./components/ContactList";
+// import { v4 as uuidv4 } from 'uuid';
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
 
   const addContactHandler = (contact) => {
     console.log(contact);
-    setcontacts([...contacts, { id: uuidv4(), ...contact }]);
+    setcontacts([...contacts, { id:uuidv4(), ...contact }]);
     console.log(contact.id)
     //The spread operator can be used to take an existing array and add another element to it while still preserving the original array (famous original array’s?).
   }
