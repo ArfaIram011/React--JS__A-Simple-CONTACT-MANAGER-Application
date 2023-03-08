@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Header from './components/Header';
 import AddContact from "./components/AddContact";
 import ContactList from "./components/ContactList";
-// import { v4 as uuidv4 } from 'uuid';
+
 
 
 function App() {
   const { v4: uuidv4 } = require('uuid');
   const LOCAL_STORAGE_KEY = 'Contacts';
-  const [contacts, setcontacts] = useState(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)));
+  const [contacts, setcontacts] = useState([JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))]);
 
   const addContactHandler = (contact) => {
     console.log(contact);
@@ -40,7 +40,7 @@ function App() {
     , []);
 
   return (
-    <div className="App">
+    <div style={{margin:'20px'}}>
       <Header />
       <AddContact addContactHandler={addContactHandler} />
       <h3 
